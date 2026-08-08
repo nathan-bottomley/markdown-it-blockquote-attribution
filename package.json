@@ -10,6 +10,8 @@
     "test": "node --test test/*.test.js"
   },
   "devDependencies": {
-    "markdown-it": "^15.0.0"
+    "eslint": "^9.39.5",
+    "markdown-it": "^15.0.0",
+    "neostandard": "^0.13.0"
   }
 }
