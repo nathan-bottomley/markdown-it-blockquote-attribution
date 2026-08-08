@@ -8,6 +8,13 @@
     "type": "git",
     "url": "git+https://github.com/nathan-bottomley/markdown-it-blockquote-attribution.git"
   },
+  "keywords": [
+    "markdown",
+    "markdown-it",
+    "markdown-it-plugin",
+    "blockquote",
+    "attribution"
+  ],
   "type": "module",
   "main": "index.js",
   "exports": "./index.js",
