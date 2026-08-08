@@ -1,4 +1,4 @@
-const REGEX_URL = /https?:\/\/[^\s/$.?#()].[^\s()]*/i
+const URL_PATTERN = /https?:\/\/[^\s/$.?#()].[^\s()]*/i
 
 const DEFAULTS = {
   marker: '—',
@@ -12,7 +12,7 @@ function isEmpty (str) {
 }
 
 function extractUrl (str) {
-  const match = str.match(REGEX_URL)
+  const match = str.match(URL_PATTERN)
   return match ? match[0] : null
 }
 
@@ -49,8 +49,8 @@ function createBlockToken (state, type, tag, nesting, level, className) {
   return token
 }
 
-// Returns the index of the figure's closing tag, for the caller to resume
-// scanning from — 5 tokens are spliced in total, hence newEnd + 5.
+// Returns the index of the figure's closing tag for the caller to resume
+// scanning from: 5 tokens are spliced in total, hence newEnd + 5.
 function wrapBlockquote (state, options, level, blockquoteRange, markerLocation) {
   const { marker, removeMarker, containerClass, attributionClass } = options
   const { start, end } = blockquoteRange
