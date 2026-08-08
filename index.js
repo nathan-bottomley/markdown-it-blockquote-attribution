@@ -1,4 +1,4 @@
-const URL_PATTERN = /https?:\/\/[^\s/$.?#()].[^\s()]*/i
+const URL_PATTERN = /https?:\/\/[^\s/$.?#(){}"].[^\s(){}"]*/i
 
 const DEFAULTS = {
   marker: '—',
