@@ -14,3 +14,19 @@ for (const { description, input, expected } of loadFixtures(fixturesPath)) {
     assert.equal(md.render(input), expected)
   })
 }
+
+test('containerClass and attributionClass options override the default classes', () => {
+  const customMd = new MarkdownIt()
+  customMd.use(attribution, { containerClass: 'my-quote', attributionClass: 'my-cite' })
+
+  const actual = customMd.render('> Quote text.\n>\n> — Author\n')
+
+  assert.equal(actual, [
+    '<figure class="my-quote">',
+    '<blockquote>',
+    '<p>Quote text.</p>',
+    '</blockquote>',
+    '<figcaption class="my-cite">Author</figcaption>',
+    '</figure>\n'
+  ].join('\n'))
+})

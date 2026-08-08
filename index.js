@@ -1,6 +1,11 @@
-const CLASS_CONTAINER = 'quote'
-const CLASS_ATTRIBUTION = 'attribution'
 const REGEX_URL = /https?:\/\/[^\s/$.?#()].[^\s()]*/i
+
+const DEFAULTS = {
+  marker: '—',
+  removeMarker: true,
+  containerClass: 'quote',
+  attributionClass: 'attribution'
+}
 
 function isEmpty (str) {
   return !str || str.trim().length === 0
@@ -48,8 +53,7 @@ function findAttribution (tokens, marker, level, start, end) {
 }
 
 export default function markdownItAttribution (md, options = {}) {
-  const marker = options.marker || '—'
-  const removeMarker = options.removeMarker !== false
+  const { marker, removeMarker, containerClass, attributionClass } = { ...DEFAULTS, ...options }
 
   md.core.ruler.after('block', 'attribution', function (state) {
     const tokens = state.tokens
@@ -79,13 +83,13 @@ export default function markdownItAttribution (md, options = {}) {
       caption.level = level + 2
 
       tokens.splice(newEnd + 1, 0,
-        blockToken(state, 'blockquote_attribution_open', 'figcaption', 1, level + 1, CLASS_ATTRIBUTION),
+        blockToken(state, 'blockquote_attribution_open', 'figcaption', 1, level + 1, attributionClass),
         caption,
         blockToken(state, 'blockquote_attribution_close', 'figcaption', -1, level + 1),
         blockToken(state, 'blockquote_container_close', 'figure', -1, level)
       )
       tokens.splice(start, 0,
-        blockToken(state, 'blockquote_container_open', 'figure', 1, level, CLASS_CONTAINER)
+        blockToken(state, 'blockquote_container_open', 'figure', 1, level, containerClass)
       )
 
       return newEnd + 5
