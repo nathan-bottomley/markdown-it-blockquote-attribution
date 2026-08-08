@@ -1,0 +1,112 @@
+Basic attribution (no URL)
+.
+> To be, or not to be.
+>
+> — Shakespeare
+.
+<figure class="quote">
+<blockquote>
+<p>To be, or not to be.</p>
+</blockquote>
+<figcaption class="attribution">Shakespeare</figcaption>
+</figure>
+.
+
+Marker sharing a paragraph with quote text via a soft break
+.
+> Quote text.
+> — Shared Author
+.
+<figure class="quote">
+<blockquote>
+<p>Quote text.</p>
+</blockquote>
+<figcaption class="attribution">Shared Author</figcaption>
+</figure>
+.
+
+Attribution with a bare URL
+.
+> Quote text.
+>
+> — Cicero, https://example.com
+.
+<figure class="quote">
+<blockquote cite="https://example.com">
+<p>Quote text.</p>
+</blockquote>
+<figcaption class="attribution">Cicero, https://example.com</figcaption>
+</figure>
+.
+
+Attribution with an inline link
+.
+> Quote text.
+>
+> — Cicero, [source](https://example.com)
+.
+<figure class="quote">
+<blockquote cite="https://example.com">
+<p>Quote text.</p>
+</blockquote>
+<figcaption class="attribution">Cicero, <a href="https://example.com">source</a></figcaption>
+</figure>
+.
+
+Attribution with a reference-style link (cite is not set — known v1 limitation)
+.
+> Quote text.
+>
+> — Cicero, [source][]
+
+[source]: https://example.com
+.
+<figure class="quote">
+<blockquote>
+<p>Quote text.</p>
+</blockquote>
+<figcaption class="attribution">Cicero, <a href="https://example.com">source</a></figcaption>
+</figure>
+.
+
+Multiple attributed paragraphs in one blockquote (first one wins)
+.
+> Quote one.
+>
+> — First
+>
+> Quote two.
+>
+> — Second
+.
+<figure class="quote">
+<blockquote>
+<p>Quote one.</p>
+<p>Quote two.</p>
+<p>— Second</p>
+</blockquote>
+<figcaption class="attribution">First</figcaption>
+</figure>
+.
+
+Unmatched blockquote passes through unmodified
+.
+> Just a quote.
+>
+> No marker here.
+.
+<blockquote>
+<p>Just a quote.</p>
+<p>No marker here.</p>
+</blockquote>
+.
+
+Empty quote content (marker on the very first line)
+.
+> — Just an attribution, no quote
+.
+<figure class="quote">
+<blockquote></blockquote>
+<figcaption class="attribution">Just an attribution, no quote</figcaption>
+</figure>
+.

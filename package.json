@@ -1,0 +1,15 @@
+{
+  "name": "markdown-it-blockquote-attribution",
+  "version": "1.0.0",
+  "description": "A configurable markdown-it plugin that adds a simple syntax for quote attribution",
+  "license": "ISC",
+  "author": "Nathan Bottomley",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "devDependencies": {
+    "markdown-it": "^15.0.0"
+  }
+}
