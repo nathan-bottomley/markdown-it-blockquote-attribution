@@ -110,3 +110,20 @@ Empty quote content (marker on the very first line)
 <figcaption class="attribution">Just an attribution, no quote</figcaption>
 </figure>
 .
+
+Nested blockquotes are left alone — only top-level blockquotes get attribution handling
+.
+> > Inner quote.
+> >
+> > — Inner Author
+>
+> Outer text.
+.
+<blockquote>
+<blockquote>
+<p>Inner quote.</p>
+<p>— Inner Author</p>
+</blockquote>
+<p>Outer text.</p>
+</blockquote>
+.
