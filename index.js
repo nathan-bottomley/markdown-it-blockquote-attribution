@@ -90,7 +90,7 @@ function wrapBlockquote (state, options, level, blockquoteRange, markerLocation)
   return newEnd + 5
 }
 
-export default function markdownItAttribution (md, options = {}) {
+export default function markdownItBlockquoteAttribution (md, options = {}) {
   const resolvedOptions = { ...DEFAULTS, ...options }
   const { marker } = resolvedOptions
 
