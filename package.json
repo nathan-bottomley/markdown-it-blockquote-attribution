@@ -6,8 +6,12 @@
   "author": "Nathan Bottomley",
   "type": "module",
   "main": "index.js",
+  "exports": "./index.js",
   "scripts": {
     "test": "node --test test/*.test.js"
+  },
+  "peerDependencies": {
+    "markdown-it": "^13.0.0 || ^14.0.0 || ^15.0.0"
   },
   "devDependencies": {
     "eslint": "^9.39.5",
