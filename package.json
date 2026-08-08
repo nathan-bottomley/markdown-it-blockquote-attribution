@@ -4,6 +4,10 @@
   "description": "A configurable markdown-it plugin that adds a simple syntax for quote attribution",
   "license": "MIT",
   "author": "Nathan Bottomley",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathan-bottomley/markdown-it-blockquote-attribution.git"
+  },
   "type": "module",
   "main": "index.js",
   "exports": "./index.js",
